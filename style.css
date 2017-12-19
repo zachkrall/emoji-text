@@ -1,0 +1,18 @@
+body{
+  font-family:sans-serif;
+  padding:2rem;
+  background:#fff;
+}
+#srcText{
+  width:100%;
+}
+#result{
+  font-size:22pt;
+  line-height:28pt;
+}
+footer{
+  position:absolute;
+  bottom:0;left:0;
+  padding:2rem;
+  font-size:0.85em;
+}
