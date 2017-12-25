@@ -1,18 +1,170 @@
+*{
+
+  margin:0;padding:0;
+  box-sizing:border-box;
+
+}
+
+html{
+
+  height:100%;
+  width: 100%;
+
+}
+
 body{
+
   font-family:sans-serif;
-  padding:2rem;
+  background:#efefef;
+
+}
+
+header{
+
+  background:#ccc;
+  text-align:right;
+
+}
+
+#dropDown{
+
+  width:100px;
+  height:100px;
+
+  overflow:hidden;
+
   background:#fff;
+
+  font-size:50px;
+
+  position:fixed;
+  top:0;left:0;
+
+  z-index:11;
+
 }
+.option, #active{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height:100px;width:100px;
+}
+.option:hover{
+  background:#ccc;
+  cursor:pointer;
+}
+#dropDown .option{
+  display:none;
+}
+#dropDown #active{
+  display:flex;
+}
+#dropDown:hover{
+
+  height:100%;
+  width:300px;
+  overflow:auto;
+
+  display:flex;
+  flex-wrap:wrap;
+
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+
+}
+#dropDown:hover .option{
+  display:flex;
+}
+#dropDown:hover #active{
+  display:none;
+}
+
 #srcText{
-  width:100%;
-}
-#result{
-  font-size:22pt;
-  line-height:28pt;
-}
-footer{
+
   position:absolute;
+  top:0;right:0;
+
+  height:100px;
+  width: 100%;
+  padding-left:120px;
+
+  font-size:14pt;
+  z-index:10;
+  outline:0;
+  border:0;
+
+}
+#srcText:focus, #srcText:active{
+  outline:0;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border:0;
+}
+
+section{
+
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height:100%;
+
+}
+
+#result{
+  font-size:24pt;
+  line-height:28pt;
+  padding:2rem;
+  text-align:center;
+}
+#hiddenResult{
+  position:absolute;
+  top:-1000px;
+  left:-1000px;
+}
+
+#social{
+  display:none;
+}
+
+#social button{
+
+  margin:0 0.5rem;padding:0.5rem 1rem;
+  font-size:inherit;
+  border-width:2px;
+  border-style:solid;
+  border-radius:10px;
+  -webkit-appearance: none;
+
+}
+#social button:hover{
+  cursor:pointer;
+}
+#copy{
+  border-color:#fff;
+  color:#040404;
+  background-color:#fff;
+}
+#tweet{
+  border-color:#1DA1F2;
+  color:#fff;
+  background-color:#1DA1F2;
+}
+
+footer{
+  position:fixed;
   bottom:0;left:0;
+
   padding:2rem;
   font-size:0.85em;
+
+  text-align:center;
+
+  width:100%;
+  color:#777;
+}
+footer a{
+  color:#000;
 }

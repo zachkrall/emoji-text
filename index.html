@@ -2,19 +2,53 @@
 <head>
 
   <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge"> <!-- † -->
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-<title></title>
-<link rel="stylesheet" href="style.css" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Stylized Text Generator | Zach Krall</title>
+
+  <link rel="stylesheet" href="style.css" />
 
 </head>
 <body>
-<input id="srcText" placeholder="Type Here">
-<p id="result"></p>
 
-<footer>quick javascript sketch by <a href="//zachkrall.com">Zach Krall</a></footer>
-  
-<script src="app.js"></script>
+  <header>
+    <div id="dropDown">
+      <div id="active"></div>
+      <div class="option">🎄</div>
+      <div class="option">🎅</div>
+      <div class="option">🤶</div>
+      <div class="option">🕎</div>
+      <div class="option">👏</div>
+      <div class="option">👍</div>
+      <div class="option">🖕</div>
+      <div class="option">✨</div>
+      <div class="option">⚡️</div>
+      <div class="option">💥</div>
+      <div class="option">😡</div>
+      <div class="option">💀</div>
+      <div class="option">💩</div>
+      <div class="option">🍆</div>
+      <div class="option">🍑</div>
+      <div class="option">🏳️‍🌈</div>
+      <div class="option">❤️</div>
+      <div class="option">💕</div>
+      <div class="option">💖</div>
+      <div class="option">🎉</div>
+      <div class="option">🎵</div>
+      <div class="option">♻️</div>
+    </div>
+    <input id="srcText" placeholder="Select Emoji and Type Here">
+  </header>
+
+  <section id="main">
+    <p id="result"></p>
+    <div id="social"><button id="copy">Copy It</button><button id="tweet">Tweet It</button></div>
+    <input id="hiddenResult">
+  </section>
+
+  <footer>Built by <a href="" id="author">Zach Krall</a>. If you like this, <a href="https://paypal.me/zachkrall/1" id="donate">consider sharing some $$$</a></footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
