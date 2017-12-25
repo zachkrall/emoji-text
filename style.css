@@ -26,6 +26,7 @@ header{
 
 }
 
+/* Set Up Dropdown Sizes */
 #dropDown{
 
   width:100px;
@@ -49,19 +50,14 @@ header{
   justify-content: center;
   height:100px;width:100px;
 }
-.option:hover,
-.option:active{
-  background:#ccc;
-  cursor:pointer;
-}
-#dropDown .option{
+.option{
   display:none;
 }
 #dropDown #active{
   display:flex;
 }
-#dropDown:hover,
-#dropDown:active{
+/* Open Div when selecting Options */
+#dropDown:hover{
 
   height:100%;
   width:300px;
@@ -73,18 +69,21 @@ header{
   box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
 
 }
-#dropDown:hover .option,
-#dropDown:active .option{
+#dropDown:hover .option{
   display:flex;
 }
-#dropDown:hover #active,
-#dropDown:active #active{
+#dropDown:hover #active{
   display:none;
+}
+
+.option:hover{
+  background:#ccc;
+  cursor:pointer;
 }
 
 #srcText{
 
-  position:absolute;
+  position:fixed;
   top:0;right:0;
 
   height:100px;

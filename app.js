@@ -1,59 +1,72 @@
+// These Things Change
+
 var emoji = '👏';
 var newString;
 var counter = 0;
 
+// These Things Don't Change
+
+var srcText = document.getElementById('srcText');
+var result  = document.getElementById('result');
+var hiddenResult  = document.getElementById('hiddenResult');
+var active  = document.getElementById('active');
+var social  = document.getElementById('social');
+var copy  = document.getElementById('copy');
+var tweet  = document.getElementById('tweet');
+
+var dropDown  = document.getElementById('dropDown');
+var emojiOption = dropDown.getElementsByClassName('option');
+
+// Start things off right
+
+active.innerHTML = emoji;
+
+// Set Up Functions
 function updateString(){
 
-  newString = emoji + ' ' + document.getElementById('srcText').value.replace(/ /g, ' ' + emoji + ' ') + ' ' + emoji;
-  document.getElementById('result').innerHTML = newString;
-  document.getElementById('hiddenResult').value = newString;
+  if ( srcText.value ) {
 
-  if ( counter > 0 ){
-    document.getElementById('social').style.display = 'block';
+    newString = emoji + ' ' + srcText.value.replace(/ /g, ' ' + emoji + ' ') + ' ' + emoji;
+    result.innerHTML = newString;
+    hiddenResult.value = newString;
+
+    if ( counter > 0 ){ social.style.display = 'block'; }
+    counter++;
+
   }
 
-  counter++;
-  console.log(counter);
 };
 
-document.getElementById('active').innerHTML = emoji;
 
-document.getElementById('srcText').onkeyup = function(){
+// Things Start Happening
+
+srcText.onkeyup = function(){
+
   updateString();
+
 };
 
-var choices = document.getElementById('dropDown').getElementsByClassName('option');
-for(var z = 0; z < choices.length; z++) {
-    var elem = choices[z];
-    elem.onclick = function() {
-      document.getElementById('active').innerHTML = this.innerHTML;
-      emoji = this.innerHTML;
-      updateString();
-      console.log(this.innerHTML);
-    };
-}
+for(var z = 0; z < emojiOption.length; z++) {
 
-document.getElementById('copy').onclick = function () {
-
-  var copyInput = document.getElementById('hiddenResult');
-  copyInput.select();
-  document.execCommand("Copy");
-
-  console.log('copied: ' + copyInput.value);
-
-  alert('Copied to your clipboard!');
+  emojiOption[z].onclick = function() {
+    active.innerHTML = this.innerHTML;
+    emoji = this.innerHTML;
+    updateString();
+  };
 
 }
 
-document.getElementById('tweet').onclick = function () {
+copy.onclick = function () {
 
-  if ( !newString ) {
+    hiddenResult.select();
+    document.execCommand("Copy");
+    alert('Copied: ' + hiddenResult.value);
 
-    alert('write something first!');
+}
 
-  } else {
-  window.open ('https://twitter.com/intent/tweet?text=' + newString.replace(/ /g, '%20'), 'twitter','width=600,height=430,toolbar=0,status=0');
-  return false;
-  }
+tweet.onclick = function () {
+
+    window.open ('https://twitter.com/intent/tweet?text=' + newString.replace(/ /g, '%20'), 'twitter','width=600,height=430,toolbar=0,status=0');
+    return false;
 
 }
