@@ -29,14 +29,14 @@ header{
 /* Set Up Dropdown Sizes */
 #dropDown{
 
-  width:100px;
-  height:100px;
+  width:80px;
+  height:80px;
 
   overflow:hidden;
 
   background:#fff;
 
-  font-size:50px;
+  font-size:40px;
 
   position:fixed;
   top:0;left:0;
@@ -48,7 +48,8 @@ header{
   display:flex;
   align-items: center;
   justify-content: center;
-  height:100px;width:100px;
+  height:80px;width:80px;
+  cursor: pointer;
 }
 .option{
   display:none;
@@ -57,10 +58,10 @@ header{
   display:flex;
 }
 /* Open Div when selecting Options */
-#dropDown:hover{
+#dropDown.open{
 
   height:100%;
-  width:300px;
+  width:calc(80px*3);
   overflow:auto;
 
   display:flex;
@@ -69,16 +70,17 @@ header{
   box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
 
 }
-#dropDown:hover .option{
+#dropDown.open .option{
   display:flex;
 }
-#dropDown:hover #active{
+#dropDown.open #active{
   display:none;
 }
-
+#active:hover{
+  background:#ccc;
+}
 .option:hover{
   background:#ccc;
-  cursor:pointer;
 }
 
 #srcText{
@@ -86,9 +88,9 @@ header{
   position:fixed;
   top:0;right:0;
 
-  height:100px;
+  height:80px;
   width: 100%;
-  padding-left:120px;
+  padding-left:95px;
 
   font-size:14pt;
   z-index:10;

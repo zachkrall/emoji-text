@@ -1,11 +1,22 @@
 // These Things Change
 
-var emoji = '👏';
+var emoji = '👏'; // iconic
 var newString;
 var counter = 0;
+var i;
 
 // These Things Don't Change
 
+var allEmoji = [
+  '🎄','🎅','🤶',
+  '🕎','🎉','❄️',
+  '👏','👍','🖕',
+  '✨','⚡️','💥',
+  '😉','😡','💀',
+  '🏳️‍🌈','🍆','🍑',
+  '❤️','💕','💖',
+  '🎵','♻️','💩'
+];
 var srcText = document.getElementById('srcText');
 var result  = document.getElementById('result');
 var hiddenResult  = document.getElementById('hiddenResult');
@@ -20,6 +31,13 @@ var emojiOption = dropDown.getElementsByClassName('option');
 // Start things off right
 
 active.innerHTML = emoji;
+
+for( i=0; i < allEmoji.length; i++ ){
+  var temp = document.createElement('div');
+  temp.className = 'option';
+  temp.innerHTML = allEmoji[i];
+  dropDown.appendChild(temp);
+}
 
 // Set Up Functions
 function updateString(){
@@ -52,7 +70,15 @@ for(var z = 0; z < emojiOption.length; z++) {
     active.innerHTML = this.innerHTML;
     emoji = this.innerHTML;
     updateString();
+
+    dropDown.className = null;
   };
+
+}
+
+active.onclick = function () {
+
+  dropDown.className = 'open';
 
 }
 
