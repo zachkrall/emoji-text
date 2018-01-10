@@ -8,8 +8,6 @@ var i;
 // These Things Don't Change
 
 var allEmoji = [
-  '🎄','🎅','🤶',
-  '🕎','🎉','❄️',
   '👏','👍','🖕',
   '✨','⚡️','💥',
   '😉','😡','💀',
@@ -45,13 +43,18 @@ function updateString(){
   if ( srcText.value ) {
 
     newString = emoji + ' ' + srcText.value.replace(/ /g, ' ' + emoji + ' ') + ' ' + emoji;
-    result.innerHTML = newString;
+
+    countText =  newString.length;
+
+    result.innerHTML = newString + '<br><br>' + countText + '/140';
     hiddenResult.value = newString;
 
     if ( counter > 0 ){ social.style.display = 'block'; }
     counter++;
 
   }
+
+  
 
 };
 
