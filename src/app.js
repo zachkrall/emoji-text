@@ -1,3 +1,5 @@
+var allEmoji = require('./emoji.json');
+
 // These Things Change
 
 var emoji = '👏'; // iconic
@@ -7,14 +9,6 @@ var i;
 
 // These Things Don't Change
 
-var allEmoji = [
-  '👏','👍','🖕',
-  '✨','⚡️','💥',
-  '😉','😡','💀',
-  '🏳️‍🌈','🍆','🍑',
-  '❤️','💕','💖',
-  '🎵','♻️','💩'
-];
 var srcText = document.getElementById('srcText');
 var result  = document.getElementById('result');
 var hiddenResult  = document.getElementById('hiddenResult');
@@ -30,10 +24,10 @@ var emojiOption = dropDown.getElementsByClassName('option');
 
 active.innerHTML = emoji;
 
-for( i=0; i < allEmoji.length; i++ ){
+for( i=0; i < allEmoji.emoji.length; i++ ){
   var temp = document.createElement('div');
   temp.className = 'option';
-  temp.innerHTML = allEmoji[i];
+  temp.innerHTML = allEmoji.emoji[i];
   dropDown.appendChild(temp);
 }
 
@@ -54,7 +48,7 @@ function updateString(){
 
   }
 
-  
+
 
 };
 

@@ -14,7 +14,7 @@ html{
 
 body{
 
-  font-family:sans-serif;
+  font-family: --apple-system, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   background:#efefef;
 
 }
@@ -53,6 +53,7 @@ header{
 }
 .option{
   display:none;
+  font-family:"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 #dropDown #active{
   display:flex;
